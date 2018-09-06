@@ -7,7 +7,7 @@ import java.util.List;
 // Prints out all the possible combinations of outcomes from rolling two
 // dice
 
-public class E06Dice {
+public class E05Dice {
 	public static void main(String[] args) {
 		rollDice(2, new ArrayList<Integer>());
 	}
