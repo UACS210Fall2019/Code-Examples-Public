@@ -15,6 +15,7 @@ public class E13ListOfShapes {
             System.out.println(shape);
 
             // TODO 2: how can we determine which subclass?
+            System.out.println(shape instanceof Shape);
 
         }
 
