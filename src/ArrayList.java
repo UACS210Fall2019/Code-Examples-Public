@@ -1,5 +1,5 @@
 // Allison Obourn
-// CSE 143 - lecture 26
+// CSE 210 - lecture 16
 // An ArrayList object stores an ordered list of objects using
 // an unfilled array.
 // This version uses "generics" so that it can store any type of value, not 
