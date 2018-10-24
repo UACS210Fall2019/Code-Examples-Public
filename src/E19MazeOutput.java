@@ -1,5 +1,6 @@
+
 /**
- * Drawing reads a file in that is hard coded in start and
+ * E19MazeOutput reads a file in that is hard coded and
  * turns that file's character representation of a maze
  * into a drawing on a JavaFX canvas.
  * 
@@ -60,6 +61,7 @@ public class E19MazeOutput extends Application {
                 // * fill in as yellow because it is a corn wall
                 if (maze[i][j] == '*') {
                     gc.fillRect(j * SIZE, i * SIZE, SIZE, SIZE);
+
                 } else if (maze[i][j] == 'S') { // Color blue for start position
                                                 // in maze
                     gc.setFill(Color.BLUE);
@@ -72,6 +74,7 @@ public class E19MazeOutput extends Application {
                     // Could just pass arrays straight into fillPolygon
                     gc.fillPolygon(xPoints, yPoints, TRIANGLE);
                     gc.setFill(Color.YELLOW); // Set color back to yellow
+
                 } else if (maze[i][j] == 'E') { // Color square green for end
                     gc.setFill(Color.GREEN);
                     gc.fillRect(j * SIZE, i * SIZE, SIZE, SIZE);
