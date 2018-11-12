@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 
 public class E19MazeOutput extends Application {
     // 25 x 25 pixel square
-    final int SIZE = 25;
+    final int SIZE = 50;
     // Points needed to draw a triangle
     final int TRIANGLE = 3;
 
