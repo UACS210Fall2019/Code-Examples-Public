@@ -22,6 +22,10 @@ public class Salesperson extends Employee {
         return super.getSalary() + salesAmount * commission;
     }
 
+    public void uniqueMethod() {
+        System.out.println("Unique Instance Method in the Salesperson class");
+    }
+
     /* Hides Employee.example() */
     public static void example() {
         System.out.println("Salesperson Class");
