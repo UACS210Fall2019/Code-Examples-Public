@@ -1,8 +1,7 @@
-
 public class E16BoxTester {
 
     public static void main(String[] args) {
-        E16GenericBox<String> box = new E16GenericBox<String>("CS210");
+        E16GenericBox box = new E16GenericBox("CS210");
         System.out.println(box.getContent());
         System.out.println(box);
 
