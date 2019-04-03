@@ -21,5 +21,9 @@ public class Apple extends Fruit {
         System.out.println("Made " + numCups + " cups of sauce");
     }
 
+    public String toString() {
+        return "We are apples";
+    }
+
     private String kind;
 }
