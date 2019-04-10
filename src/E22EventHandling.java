@@ -1,6 +1,4 @@
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
@@ -29,7 +27,9 @@ public class E22EventHandling extends Application {
         Button b = new Button("PressMe");
 
         // This is where you set the event handler
-        b.setOnAction(new ExampleHandler());
+        b.setOnAction((e) -> {
+            System.out.println("Lambda Function.");
+        });
 
         // Finish setting the stage
         p.setCenter(b);
@@ -37,16 +37,4 @@ public class E22EventHandling extends Application {
         primaryStage.show();
 
     }
-
-    private class ExampleHandler implements EventHandler<ActionEvent> {
-        public ExampleHandler() {
-            
-        }
-        @Override
-        public void handle(ActionEvent event) {
-            System.out.println("Button Press");
-
-        }
-    }
-
 }
