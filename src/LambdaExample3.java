@@ -13,7 +13,7 @@ public class LambdaExample3 {
 			System.out.println(" " + data[i]);
 		});
 		
-		filter(data, (i) -> data[i] = data[i] * 2);
+        filter(data, (i) -> data[i] = data[i] * 2);
 		
 		filter(data, (i) -> {
 			if (data[i] < 0) {
