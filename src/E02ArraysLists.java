@@ -36,7 +36,7 @@ public class E02ArraysLists {
 		int theAnswer = hello(numbers, "cat");
 	}
 	
-	// takes an array of integers and a string as parameteres
+    // takes an array of integers and a string as parameters
 	// returns an integer
 	public static int hello(int[] nums, String word) {
 		System.out.println(word);
