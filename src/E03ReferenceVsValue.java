@@ -19,7 +19,7 @@ public class E03ReferenceVsValue {
          * unchanged.
          */
         int x = 67;
-        foo(x);
+        x = foo(x);
         System.out.println("x = " + x);
 
         /*
@@ -29,15 +29,16 @@ public class E03ReferenceVsValue {
          * So any changes made in the 'bar' method will persist after
          * 'bar' returns!
          */
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<Integer>();
         list.add(7);
         System.out.println("list = " + list);
         bar(list);
         System.out.println("list after bar call = " + list);
     }
 
-    public static void foo(int x) {
+    public static int foo(int x) {
         x = 42;
+        return x;
     }
 
     public static void bar(List<Integer> list) {
