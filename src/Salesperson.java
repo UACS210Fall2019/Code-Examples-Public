@@ -20,4 +20,19 @@ public class Salesperson extends Employee {
         return "Buy buy buy - Nsync";
     }
 
+    public static String getCompanyMotto() {
+        return "We are salespersons of this company.";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Salesperson)) {
+            return false;
+        }
+        Salesperson other = (Salesperson) o;
+        return super.equals(o)
+                && other.salesAmount == this.salesAmount
+                && other.commission == commission;
+    }
+
 }

@@ -2,6 +2,9 @@
 public class E08Company {
 
     public static void main(String[] args) {
+        Salesperson empl = new Salesperson("Susan", 60000, 20000, 0.1);
+        Salesperson empl2 = new Salesperson("Susan", 60000, 20000, 0.1);
+        System.out.println(empl.equals(empl2));
         // Salesperson tyler = new Salesperson("Tyler", 50000, 10000, 0.1);
         // System.out.println(tyler.getSalary());
         // System.out.println(tyler.getSalesPitch());
@@ -12,7 +15,6 @@ public class E08Company {
         // System.out.println(clark.getSalesPitch());
 
         Salesperson tyler = new Salesperson("Tyler", 50000, 10000, 0.1);
-        System.out.println(tyler.getSalesPitch());
 
         System.out.println(tyler.getSalary());
 
