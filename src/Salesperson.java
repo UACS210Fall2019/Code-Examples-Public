@@ -1,14 +1,29 @@
 
 public class Salesperson extends Employee {
 
+    public enum State {
+        AZ, CA, TX, UT, CO
+    }
+
     private double salesAmount;
     private double commission;
+    private State state = State.AZ;
 
     public Salesperson(String name, double salary, double salesAmount,
             double commission) {
         super(name, salary);
         this.salesAmount = salesAmount;
         this.commission = commission;
+    }
+
+    public Salesperson(String name, double salary, double salesAmount,
+            double commission, State state) {
+        this(name, salary, salesAmount, commission);
+        this.state = state;
+    }
+
+    public State getTerritory() {
+        return this.state;
     }
 
     @Override

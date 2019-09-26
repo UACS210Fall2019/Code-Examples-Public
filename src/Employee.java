@@ -18,7 +18,7 @@ public class Employee extends Object {
     }
 
     public String toString() {
-        return name + "earns a salary of " + salary;
+        return name + " earns a salary of " + salary;
     }
 
     public static String getCompanyMotto() {
