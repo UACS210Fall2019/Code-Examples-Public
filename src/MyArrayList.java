@@ -1,15 +1,20 @@
+import java.util.Arrays;
+import java.util.Iterator;
 
-public class MyArrayList {
+public class MyArrayList implements Iterable<Integer>, Iterator<Integer> {
 
     private static final int DEFAULT_CAPACITY = 10;
     private int[] array;
     private int size;
     private int capacity;
 
+    private int iteratorIndex;
+
     public MyArrayList() {
         array = new int[DEFAULT_CAPACITY];
         size = 0;
         capacity = DEFAULT_CAPACITY;
+        iteratorIndex = 0;
     }
 
     private void growArray() {
@@ -30,7 +35,15 @@ public class MyArrayList {
     }
 
     public void add(int index, int value) {
-        // TODO
+        // NOTE: Would want to check that the index is valid here first.
+        if (size >= capacity) {
+            growArray();
+        }
+        for (int i = size; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = value;
+        size += 1;
     }
 
     public void clear() {
@@ -62,7 +75,11 @@ public class MyArrayList {
     }
 
     public void remove(int index) {
-        // TODO
+        // NOTE: Would want to check that the index is valid here first.
+        for (int i = index; i < size - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        size -= 1;
     }
 
     public int size() {
@@ -79,8 +96,33 @@ public class MyArrayList {
     }
 
     public boolean equals(Object o) {
-        // TODO
-        return false;
+        if (!(o instanceof MyArrayList)) {
+            return false;
+        }
+        MyArrayList other = (MyArrayList) o;
+        return size == other.size && Arrays.equals(array, other.array);
+    }
+
+    /*
+     * NOTE: This is not the optimal way to provide a for-each loop
+     * for the MyArrayList class, but it works!
+     */
+    @Override
+    public Iterator<Integer> iterator() {
+        iteratorIndex = 0;
+        return this;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return iteratorIndex < size;
+    }
+
+    @Override
+    public Integer next() {
+        int result = array[iteratorIndex];
+        iteratorIndex += 1;
+        return result;
     }
 
 }
