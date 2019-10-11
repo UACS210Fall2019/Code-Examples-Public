@@ -1,4 +1,3 @@
-
 public class E13Tester {
 
     public static void main(String[] args) {
@@ -7,7 +6,6 @@ public class E13Tester {
             list.add(i);
         }
         System.out.println(list);
-
         list.remove(3);
         System.out.println(list);
         list.remove(6);

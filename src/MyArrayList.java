@@ -1,7 +1,8 @@
 import java.util.Arrays;
 import java.util.Iterator;
 
-public class MyArrayList implements Iterable<Integer>, Iterator<Integer> {
+public class MyArrayList
+        implements MyListInterface, Iterable<Integer>, Iterator<Integer> {
 
     private static final int DEFAULT_CAPACITY = 10;
     private int[] array;
