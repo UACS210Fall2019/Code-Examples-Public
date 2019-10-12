@@ -17,5 +17,4 @@ public interface MyListInterface {
 
     public int size();
 
-    public boolean equals(Object o);
 }

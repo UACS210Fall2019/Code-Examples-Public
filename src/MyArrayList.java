@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Iterator;
 
 public class MyArrayList
@@ -101,7 +100,16 @@ public class MyArrayList
             return false;
         }
         MyArrayList other = (MyArrayList) o;
-        return size == other.size && Arrays.equals(array, other.array);
+        if (size == other.size) {
+            for (int i = 0; i < size; i++) {
+                if (array[i] != other.array[i]) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /*
