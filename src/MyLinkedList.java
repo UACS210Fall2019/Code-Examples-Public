@@ -1,5 +1,5 @@
 
-public class MyLinkedList implements MyListInterface {
+public class MyLinkedList<E> implements GenericListInterface<E> {
 
     /*
      * NOTE: When you are implementing similar code for PA6, you can
@@ -10,7 +10,7 @@ public class MyLinkedList implements MyListInterface {
      * improve the efficiency of certain methods. I expect you to improve
      * upon this implementation for PA6.
      */
-    private Node front;
+    private Node<E> front;
     private int size;
 
     public MyLinkedList() {
@@ -19,12 +19,12 @@ public class MyLinkedList implements MyListInterface {
     }
 
     @Override
-    public void add(int value) {
-        Node newNode = new Node(value, null);
+    public void add(E value) {
+        Node<E> newNode = new Node<E>(value, null);
         if (front == null) {
             front = newNode;
         } else {
-            Node curr = front;
+            Node<E> curr = front;
             while (curr.next != null) {
                 curr = curr.next;
             }
@@ -34,24 +34,24 @@ public class MyLinkedList implements MyListInterface {
     }
 
     @Override
-    public void add(int index, int value) {
+    public void add(int index, E value) {
         if (index < 0 || index > size) {
             // Throw an exception
         }
         if (index == 0) {
-            Node newNode = new Node(value, front);
+            Node<E> newNode = new Node<E>(value, front);
             front = newNode;
             size += 1;
             return;
         }
         int count = 0;
-        Node curr = front;
+        Node<E> curr = front;
         while (curr.next != null && count < index - 1) {
             curr = curr.next;
             count += 1;
         }
         // Curr is the node before the index that we want to insert
-        Node newNode = new Node(value, curr.next);
+        Node<E> newNode = new Node<E>(value, curr.next);
         curr.next = newNode;
         size += 1;
     }
@@ -63,15 +63,14 @@ public class MyLinkedList implements MyListInterface {
     }
 
     @Override
-    public boolean contains(int value) {
+    public boolean contains(E value) {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public int get(int index) {
-        // TODO Auto-generated method stub
-        return 0;
+    public E get(int index) {
+        return null;
     }
 
     @Override
@@ -91,18 +90,25 @@ public class MyLinkedList implements MyListInterface {
     }
 
     public String toString() {
-        return "";
+        String result = "{ ";
+        Node<E> curr = front;
+        while (curr != null) {
+            result += curr.data + ", ";
+            curr = curr.next;
+        }
+        result += "}";
+        return result;
     }
 
     public boolean equals(Object o) {
         return false;
     }
 
-    private static class Node {
-        int data;
-        Node next;
+    private static class Node<E> {
+        E data;
+        Node<E> next;
 
-        public Node(int data, Node next) {
+        public Node(E data, Node<E> next) {
             this.data = data;
             this.next = next;
         }

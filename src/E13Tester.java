@@ -1,29 +1,13 @@
 public class E13Tester {
 
     public static void main(String[] args) {
-        MyListInterface list = new MyArrayList();
-        for (int i = 0; i < 9; i++) {
-            list.add(i);
-        }
-        System.out.println(list);
-        list.remove(3);
-        System.out.println(list);
-        list.remove(6);
-        System.out.println(list);
+        MyLinkedList<String> llist = new MyLinkedList<String>();
+        llist.add("hello");
+        llist.add("CS");
+        llist.add("210");
 
-        // for (int val : list) {
-        // System.out.println(val);
-        // }
-        // list.add(2, 67);
-        // for (int val : list) {
-        // System.out.println(val);
-        // }
+        System.out.println(llist);
 
-        // MyLinkedList llist = new MyLinkedList();
-        // for (int i = 0; i < 9; i++) {
-        // llist.add(i);
-        // }
-        // System.out.println(llist);
     }
 
 }
