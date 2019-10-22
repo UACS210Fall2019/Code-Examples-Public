@@ -101,7 +101,19 @@ public class MyLinkedList<E> implements GenericListInterface<E> {
     }
 
     public boolean equals(Object o) {
-        return false;
+        if (!(o instanceof MyLinkedList<?>)) {
+            return false;
+        }
+        MyLinkedList<?> other = (MyLinkedList<?>) o;
+        if (size() != other.size()) {
+            return false;
+        }
+        for (int i = 0; i < size(); i++) {
+            if (!get(i).equals(other.get(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static class Node<E> {

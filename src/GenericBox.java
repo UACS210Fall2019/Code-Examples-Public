@@ -1,17 +1,17 @@
+//GenericBox AFTER type erasure occurs
+public class GenericBox {
 
-public class GenericBox<E> {
+    private Object item;
 
-    private E item;
-
-    public GenericBox(E item) {
+    public GenericBox(Object item) {
         this.item = item;
     }
 
-    public E get() {
+    public Object get() {
         return item;
     }
 
-    public void put(E item) {
+    public void put(Object item) {
         this.item = item;
     }
 
