@@ -16,8 +16,8 @@ public class E27DiceRoll {
         if (numDie == 0) {
             System.out.println(soFar);
         } else {
-            // Choose
             for (int i = 1; i <= 6; i++) {
+                // Choose
                 soFar.add(i);
                 // Explore
                 diceRollHelper(numDie - 1, soFar);
