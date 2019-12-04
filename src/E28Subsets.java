@@ -25,16 +25,17 @@ public class E28Subsets {
             System.out.println(soFar);
         } else {
             Character choice = choices.first();
-            TreeSet<Character> newSet = new TreeSet<Character>(choices);
-            newSet.remove(choice);
+            choices.remove(choice);
 
             // Include choice in subsets
             soFar.add(choice);
-            recPrintSubsets(soFar, newSet);
+            recPrintSubsets(soFar, choices);
 
             // Don't include choice in subsets
             soFar.remove(choice);
-            recPrintSubsets(soFar, newSet);
+            recPrintSubsets(soFar, choices);
+
+            choices.add(choice);
         }
     }
 
