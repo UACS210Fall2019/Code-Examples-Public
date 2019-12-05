@@ -1,3 +1,4 @@
+
 /*
  * Student class for the E19PriorityQueue example.
  */
@@ -39,5 +40,4 @@ public class Student {
     public String toString() {
         return name + " " + year;
     }
-
 }

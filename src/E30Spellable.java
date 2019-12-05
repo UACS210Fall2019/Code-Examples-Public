@@ -14,7 +14,23 @@ public class E30Spellable {
 
     private static boolean isElementSpellable(String word,
             Map<String, String> symbols) {
-        return false;
+        if (word.isEmpty()) {
+            return true;
+        } else {
+            // If word starts with any length element symbol
+            for (int i = 1; word.length() >= i && i <= 3; i++) {
+                String possibleElementalSymbol = word.substring(0, i);
+                if (symbols.containsKey(possibleElementalSymbol)) {
+                    // Take away the element symbol we found
+                    // Explore
+                    if (isElementSpellable(word.substring(i), symbols)) {
+                        return true;
+                    }
+                    // Unchoose
+                }
+            }
+            return false;
+        }
     }
 
     private static Map<String, String> initSymbolsMap() {
